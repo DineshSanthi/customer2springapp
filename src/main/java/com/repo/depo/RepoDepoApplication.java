@@ -14,7 +14,7 @@ import com.repo.depo.validator.ApplicationValidator;
 @ComponentScan
 @EnableAutoConfiguration
 @SpringBootApplication
-public class RepoDepoApplication extends SpringBootServletInitializer {
+public class RepoDepoApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		SpringApplication.run(RepoDepoApplication.class, args);

@@ -96,10 +96,6 @@
               		  <warName>ROOT</warName>
                 </configuration>
             </plugin> -->
-<<<<<<< HEAD
-            
-=======
->>>>>>> aaa47d8691fc924d595f7cf8aa3f126748e37f82
 		</plugins>
 	</build>
 	

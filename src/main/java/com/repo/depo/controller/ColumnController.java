@@ -25,7 +25,6 @@ import com.repo.depo.model.Column;
 import com.repo.depo.model.Table;
 import com.repo.depo.repository.ColumnRepository;
 
-@CrossOrigin(origins = "http://127.0.0.1:8888")
 @RestController
 @RequestMapping("/column")
 public class ColumnController {

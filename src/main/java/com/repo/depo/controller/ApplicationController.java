@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,8 @@ import com.repo.depo.repository.ApplicationRepository;
 @RequestMapping("/application")
 public class ApplicationController {
 	
+	
+	private static final Logger LOG = Logger.getLogger(ApplicationController.class.getName());
 	private ApplicationRepository applicationRepository;
 
 	public ApplicationController(ApplicationRepository applicationRepository) {
@@ -38,6 +42,7 @@ public class ApplicationController {
     	dsResponse.setData(applications.toArray());
     	SmartGWTDSResponse response = new SmartGWTDSResponse();
     	response.setResponse(dsResponse);
+    	LOG.log(Level.INFO, "/all - > getting all entities");
         return ResponseEntity.accepted().body(response);
     } 	
 	
@@ -48,6 +53,7 @@ public class ApplicationController {
     	dsResponse.setData(null);
     	SmartGWTDSResponse response = new SmartGWTDSResponse();
     	response.setResponse(dsResponse);
+    	LOG.log(Level.INFO, "/insert - > trying to insert a documment " + response);
         return ResponseEntity.accepted().body(response);		
 	}
 
@@ -59,6 +65,7 @@ public class ApplicationController {
     	dsResponse.setData(null);
     	SmartGWTDSResponse response = new SmartGWTDSResponse();
     	response.setResponse(dsResponse);
+    	LOG.log(Level.INFO, "/update - > " + response);
         return ResponseEntity.accepted().body(response);		
 	}
 
@@ -69,6 +76,7 @@ public class ApplicationController {
     	dsResponse.setData(null);
     	SmartGWTDSResponse response = new SmartGWTDSResponse();
     	response.setResponse(dsResponse);
+    	LOG.log(Level.INFO, "/delete/{id}- > " + response);
         return ResponseEntity.accepted().body(response);		
 	}
 
